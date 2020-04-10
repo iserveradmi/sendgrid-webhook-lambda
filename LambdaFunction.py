@@ -14,6 +14,11 @@ def respond(err, res=None):
 def lambda_handler(event, context):
     print("Received event!")
     payloads = json.loads(event['body'])
+    
+    #this one have error 
+    #"payloads = json.loads(event['body'])"
+    #"errorMessage": "list indices must be integers or slices, not str",
+    
     if (payloads and isinstance(payloads, list)):
         dynamo_handler(payloads)
       
